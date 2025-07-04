@@ -1,0 +1,9 @@
+body{
+    background-color: #152441;
+    background-color: #09101d;
+}
+/* NAvbar */
+  #mobile-menu,
+    #dropdown-menu {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
