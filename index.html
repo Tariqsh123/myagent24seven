@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyAgent24Seven</title>
 
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 
     <!-- Tailwind Css -->
      <script src="https://cdn.tailwindcss.com"></script>
@@ -20,7 +20,7 @@
     <div class="container mx-auto flex items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center space-x-2">
-        <img src="logo.png" alt="logo" class="w-8 h-10 filter invert" />
+        <img src="images/logo.png" alt="logo" class="w-8 h-10 filter invert" />
         <div>
           <div class="font-bold text-lg">MyAgent24Seven</div>
           <div class="text-xs text-gray-400">powered by TheBraveNext</div>
@@ -464,7 +464,7 @@ Time to Revolutionize Your Workflow?
       <!-- Logo and Social Icons -->
       <div class="mb-10">
         <div class="flex items-center space-x-2 mb-8">
-          <img src="logo.png" alt="MyAgent24Seven logo" class="w-8 h-10 filter invert" />
+          <img src="images/logo.png" alt="MyAgent24Seven logo" class="w-8 h-10 filter invert" />
           <div>
             <div class="font-bold text-lg">MyAgent24Seven</div>
             <div class="text-xs text-gray-400">powered by TheBraveNext</div>
@@ -473,21 +473,26 @@ Time to Revolutionize Your Workflow?
 
        <div class="flex space-x-4">
   <!-- LinkedIn -->
-  <a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition">
-    <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" class="h-5 w-5" />
-  </a>
-  <!-- Facebook -->
-  <a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition">
-    <img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="h-5 w-5" />
-  </a>
-  <!-- Instagram -->
-  <a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition">
-    <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="h-5 w-5" />
-  </a>
-  <!-- Threads -->
-  <a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition">
-    <img src="https://img.icons8.com/ios-filled/24/ffffff/threads.png" alt="Threads" class="h-5 w-5" />
-  </a>
+<!-- LinkedIn -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" class="h-5 w-5" />
+</a>
+
+<!-- Facebook -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="h-5 w-5" />
+</a>
+
+<!-- Instagram -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="h-5 w-5" />
+</a>
+
+<!-- Threads -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/threads.png" alt="Threads" class="h-5 w-5" />
+</a>
+
 </div>
 
       </div>
@@ -519,7 +524,7 @@ Time to Revolutionize Your Workflow?
         <ul class="space-y-4 text-sm text-gray-400">
           <li class="flex items-center gap-2">
             <img src="https://img.icons8.com/?size=24&id=9730&format=png&color=FFFFFF" alt="Phone Icon" class="w-5 h-5" />
-            <span>+44 7463 151997</span>
+            <a class="hover:text-white transition" href="https://api.whatsapp.com/send?phone=447463151997" target="_blank" title="Whatsapp Number">+44 7463 151997</a>
           </li>
           <li class="flex items-center gap-2">
             <img src="https://img.icons8.com/?size=24&id=7880&format=png&color=FFFFFF" alt="Address Icon" class="w-5 h-5" />
@@ -527,7 +532,7 @@ Time to Revolutionize Your Workflow?
           </li>
           <li class="flex items-center gap-2">
             <img src="https://img.icons8.com/?size=24&id=12623&format=png&color=FFFFFF" alt="Email Icon" class="w-5 h-5" />
-            <span><a href="mailto:najam@thebravenext.com" class="hover:text-white transition">najam@thebravenext.com</a></span>
+            <a href="#" title="Email" class="hover:text-white transition" onclick="openGmail(event)">najam@thebravenext.com</a>
           </li>
         </ul>
       </div>
@@ -542,7 +547,81 @@ Time to Revolutionize Your Workflow?
 
   </div>
 </footer>
+<script>
+  function openGmail(event) {
+    event.preventDefault();
+    const email = 'najam@thebravenext.com';
+    const subject = encodeURIComponent('');
+    const body = encodeURIComponent(''); 
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+  }
+</script>
 
+<!-- Footer End -->
+
+<!-- Back To Top -->
+<div id="backtotop-main-container">
+    <button id="back-to-top-btn">↑</button>
+</div>
+<script>
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("backtotop-main-container").style.display = "block";
+    } else {
+        document.getElementById("backtotop-main-container").style.display = "none";
+    }
+};
+document.getElementById("back-to-top-btn").onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+</script>
+<!-- Back To Top -->
+
+<!-- WhatsApp -->
+<div class="whatsapp-widget">
+    <div class="whatsapp-icon" id="whatsapp-icon" onclick="toggleChat()">
+        <a title="Whatsapp Number" href="https://api.whatsapp.com/send?phone=447463151997" target="_blank" id="icon-text">
+          <img loading="lazy" src="https://raw.githubusercontent.com/Tariqsh123/UnBoxed-AI/refs/heads/main/Images/whatsapp.webp" title=" WhatsApp" alt="Whatsapp"></a>
+    </div>
+</div>
+<!-- WhatsApp -->
+
+<!-- Whatsapp Popup -->
+<div id="whatsapp-popup-main-container">
+    <span onclick="closeWhatsappPopup()">X</span>
+    <div id="whatsapp-icon-container">
+      <img src="https://img.icons8.com/?size=100&id=16733&format=png&color=1c732c" loading="lazy" alt="whatsapp-icon" title="whatsapp-icon">
+      <a id="Whatsapp-number" title="Whatsapp Number" href="https://api.whatsapp.com/send?phone=447463151997" target="_blank" title="Whatsapp Number">+ 447463151997</a>
+    </div>
+    <p>Please send your query or requirements in detail via whatsapp, and we will respond shortly. <br> Thank you!</p>
+  </div>
+  
+  <script>
+    let popupTimeout; 
+    let showAgainTimeout;  
+    function showWhatsappPopup() {
+      const popup = document.getElementById('whatsapp-popup-main-container');
+      popup.style.display = 'flex';
+      popupTimeout = setTimeout(() => {
+        popup.style.display = 'none';
+        showAgainTimeout = setTimeout(showWhatsappPopup, 10000);
+      }, 15000);
+    }
+    function closeWhatsappPopup() {
+      const popup = document.getElementById('whatsapp-popup-main-container');
+      popup.style.display = 'none';
+      clearTimeout(popupTimeout); 
+      showAgainTimeout = setTimeout(showWhatsappPopup, 10000);
+    }
+    window.addEventListener('load', function () {
+      setTimeout(showWhatsappPopup, 2000);
+    });
+  </script>
+  <!-- Whatsapp Popup -->
 
 
 </body>
