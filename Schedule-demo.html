@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyAgent24Seven</title>
+
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+
+    <!-- Tailwind Css -->
+     <script src="https://cdn.tailwindcss.com"></script>
+     <!-- Footer Icon Link -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
+    <!-- Css Link -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Schedule-demo.css">
+</head>
+<body>
+      <!-- Navbar -->
+  <nav class="bg-[#09101d] text-white px-4 py-3 shadow-md border-b border-white">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+       <a href="index.html">
+      <div class="flex items-center space-x-2">
+        <img src="images/logo.png" alt="logo" class="w-8 h-10 filter invert" />
+        <div>
+          <div class="font-bold text-lg">MyAgent24Seven</div>
+          <div class="text-xs text-gray-400">powered by TheBraveNext</div>
+        </div>
+      </div>
+    </a>
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex space-x-6 items-center font-medium">
+        <li class="hover:text-blue-400 cursor-pointer">Home</li>
+        <li class="relative group cursor-pointer">
+          Solutions
+          <ul class="absolute hidden group-hover:block bg-[#0b0d1d] text-sm mt-2 rounded shadow-md z-50">
+            <li class="px-4 py-2 hover:bg-blue-900">AI Services</li>
+            <li class="px-4 py-2 hover:bg-blue-900">Analytics Strategy</li>
+          </ul>
+        </li>
+        <li class="hover:text-blue-400 cursor-pointer">Case Studies</li>
+        <li class="hover:text-blue-400 cursor-pointer">Development</li>
+      </ul>
+
+      <!-- Desktop Button -->
+      <a href="Schedule-demo.html" class="hidden md:inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+        <span class="inline-flex items-center gap-1">
+          <!-- Calendar Icon -->
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 
+              00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Schedule Demo
+        </span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="md:hidden text-white" id="menu-toggle">
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu"
+      class="overflow-hidden max-h-0 opacity-0 md:hidden mt-4 transition-all duration-300 ease-in-out">
+      <ul class="space-y-3 px-2">
+        <li class="border-b pb-2">Home</li>
+
+        <!-- Mobile Dropdown -->
+      <li class="relative group cursor-pointer">
+  <div class="flex items-center hover:text-blue-400">
+    Solutions
+    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+
+  <!-- Submenu -->
+  <ul class="absolute left-0 top-full mt-2 bg-[#0b0d1d] text-sm rounded shadow-md z-50 min-w-[160px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200 ease-in-out">
+    <li class="px-4 py-2 hover:bg-blue-900 cursor-pointer">AI Services</li>
+    <li class="px-4 py-2 hover:bg-blue-900 cursor-pointer">Analytics Strategy</li>
+  </ul>
+</li>
+
+
+        <li class="border-b pb-2">Case Studies</li>
+        <li class="border-b pb-2">Development</li>
+        <li>
+          <a href="Schedule-demo.html" class="block bg-blue-600 text-white text-center px-4 py-2 rounded">
+            Schedule Demo
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- JavaScript -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const dropdownToggle = document.getElementById('dropdown-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const chevronIcon = document.getElementById('chevron-icon');
+
+    let menuOpen = false;
+    let dropdownOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.style.maxHeight = menuOpen ? '500px' : '0px';
+      mobileMenu.style.opacity = menuOpen ? '1' : '0';
+      menuIcon.innerHTML = menuOpen
+        ? `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />`
+        : `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />`;
+    });
+
+    dropdownToggle.addEventListener('click', () => {
+      dropdownOpen = !dropdownOpen;
+      dropdownMenu.style.maxHeight = dropdownOpen ? '200px' : '0px';
+      dropdownMenu.style.opacity = dropdownOpen ? '1' : '0';
+      chevronIcon.classList.toggle('rotate-180', dropdownOpen);
+    });
+  </script>
+<!-- Navbar -->
+
+
+
+
+
+<div id="schedule-top-main-container">
+   <div id="schedule-top-container">
+    <h1>CONTACT</h1>
+    <h2 >Speak With AI Expert!</h2>
+    <p>Work Smarter, Save Time and Costs with AI-Powered Industrial Automation</p>
+    <span>You Can Book a 30 Minutes Slot and Discuss Your Business Requirements!</span>
+   </div>
+   <div id="schedule-calendly-container">
+    <h2>Book A Meeting !</h2>
+    <div class="calendly-inline-widget" id="calendly-widget" data-url="https://calendly.com/thebravenext/30min" style="width:100%;height:700px;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+</div>
+</div>
+
+
+
+
+
+
+<footer class="bg-[#09101d] py-12 px-6 md:px-20 text-gray-300">
+  <div class="max-w-6xl mx-auto">
+
+    <!-- Grid with 4 columns -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+      <!-- Logo and Social Icons -->
+      <div class="mb-10">
+        <div class="flex items-center space-x-2 mb-8">
+          <img src="images/logo.png" alt="MyAgent24Seven logo" class="w-8 h-10 filter invert" />
+          <div>
+            <div class="font-bold text-lg">MyAgent24Seven</div>
+            <div class="text-xs text-gray-400">powered by TheBraveNext</div>
+          </div>
+        </div>
+
+       <div class="flex space-x-4">
+  <!-- LinkedIn -->
+<!-- LinkedIn -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/linkedin.png" alt="LinkedIn" class="h-5 w-5" />
+</a>
+
+<!-- Facebook -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="h-5 w-5" />
+</a>
+
+<!-- Instagram -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="h-5 w-5" />
+</a>
+
+<!-- Threads -->
+<a href="#" class="bg-[#152441] hover:bg-[#374151] rounded-full p-1.5 transition border border-white">
+  <img src="https://img.icons8.com/ios-filled/24/ffffff/threads.png" alt="Threads" class="h-5 w-5" />
+</a>
+
+</div>
+
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">About Us</a></li>
+          <li><a href="#" class="hover:text-white transition">Solutions</a></li>
+          <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+          <li><a href="#" class="hover:text-white transition">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition">Data Security</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contact Us</h4>
+        <ul class="space-y-4 text-sm text-gray-400">
+          <li class="flex items-center gap-2">
+            <img src="https://img.icons8.com/?size=24&id=9730&format=png&color=FFFFFF" alt="Phone Icon" class="w-5 h-5" />
+            <a class="hover:text-white transition" href="https://api.whatsapp.com/send?phone=447463151997" target="_blank" title="Whatsapp Number">+44 7463 151997</a>
+          </li>
+          <li class="flex items-center gap-2">
+            <img src="https://img.icons8.com/?size=24&id=7880&format=png&color=FFFFFF" alt="Address Icon" class="w-5 h-5" />
+            <span>20 Wenlock Road, London, N1 7GU</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <img src="https://img.icons8.com/?size=24&id=12623&format=png&color=FFFFFF" alt="Email Icon" class="w-5 h-5" />
+            <a href="#" title="Email" class="hover:text-white transition" onclick="openGmail(event)">najam@thebravenext.com</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-12 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
+      © 2025 MyAgent24Seven. All rights reserved. Powered by
+      <span class="text-green-400 font-semibold">The Brave Next</span>
+    </div>
+
+  </div>
+</footer>
+<script>
+  function openGmail(event) {
+    event.preventDefault();
+    const email = 'najam@thebravenext.com';
+    const subject = encodeURIComponent('');
+    const body = encodeURIComponent(''); 
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
+  }
+</script>
+
+<!-- Footer End -->
+
+</body>
+</html>
